@@ -14,7 +14,7 @@ const char * ranking_to_string(hand_ranking_t r) {
     switch(r)
     {
         case STRAIGHT_FLUSH:
-            return "STRAIGHT FLUSH";
+            return "STRAIGHT_FLUSH";
         case FOUR_OF_A_KIND:
             return "FOUR_OF_A_KIND";
         case FULL_HOUSE:
@@ -26,7 +26,7 @@ const char * ranking_to_string(hand_ranking_t r) {
         case THREE_OF_A_KIND:
             return "THREE_OF_A_KIND";
         case TWO_PAIR:
-            return "TWO PAIR";
+            return "TWO_PAIR";
         case PAIR:
             return "PAIR";
         default: 
@@ -115,7 +115,7 @@ card_t card_from_letters(char value_let, char suit_let) {
 card_t card_from_num(unsigned c) {
     card_t temp;
     temp.suit = c/13;
-    temp.value = c%13 + 2;
+    temp.value = (c %13) + 2;
 
     return temp;
 }
